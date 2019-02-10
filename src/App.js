@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import MyComponent from './MyComponent';
-
-
-export default class App extends Component {
- 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <MyComponent age={31} name="Frank">Age is</MyComponent>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> Learn React </a>
-          <p>{this.props.name}</p>
-        </header>
-      </div>
-    );
-  }
-}
-
+import ScrollBox from './ScrollBox';
+import IterationSample from './IterationSample';
+class App extends Component {  
+  render() {  
+    return (  
+      <div> 
+        <IterationSample/>
+        <ScrollBox ref={(ref) => this.scrollBox = ref}/> 
+        <button onClick={() => this.scrollBox.scrollToBottom()}> 맨 밑으로 </button> 
+      </div> 
+    );  
+  } 
+}  
+export default App;
